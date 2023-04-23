@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Document</title>
+    <style>
+#container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+#graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  cursor: move;
+  user-select: none;
+}
+
+.popup-style {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <svg id="graphic" viewBox="0 0 500 500">
+          <rect x="0" y="0" width="500" height="500" fill="#f2f2f2"></rect>
+          <circle id="circle1" cx="100" cy="100" r="50" fill="#00bfff"></circle>
+          <circle id="circle2" cx="300" cy="300" r="50" fill="#ff00b4">Hello</circle>
+        </svg>
+      </div>
+      
+      <div id="popup" class="popup-style">
+        <p id="popup-text"></p>
+      </div>
+      
+      
+    <script>
+const graphic = document.getElementById('graphic');
+const circle1 = document.getElementById('circle1');
+const circle2 = document.getElementById('circle2');
+const popup = document.getElementById('popup');
+const popupText = document.getElementById('popup-text');
+
+let isDragging = false;
+let startX, startY, translateX = 0, translateY = 0, scale = 1;
+
+// Add event listeners for zooming and panning
+graphic.addEventListener('mousedown', startDrag);
+graphic.addEventListener('mousemove', drag);
+graphic.addEventListener('mouseup', endDrag);
+graphic.addEventListener('wheel', zoom);
+
+// Add event listeners for popups
+circle1.addEventListener('click', showPopup);
+circle2.addEventListener('click', showPopup);
+
+function startDrag(e) {
+  if (e.button === 0) {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+  }
+}
+
+function drag(e) {
+  if (isDragging) {
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    translateX += dx;
+    translateY += dy;
+    graphic.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    startX = e.clientX;
+    startY = e.clientY;
+  }
+}
+
+function endDrag(e) {
+  if (e.button === 0) {
+    isDragging = false;
+  }
+}
+
+function zoom(e) {
+  e.preventDefault();
+  const delta = e.deltaY > 0 ? -0.1 : 0.1;
+  scale += delta;
+  scale = Math.min(Math.max(scale, 0.2), 5);
+  graphic.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+}
+
+function showPopup(e) {
+    console.log(e)
+  popupText.innerHTML = e.target.innerHTML;
+  const rect = e.target.getBoundingClientRect();
+  const x = rect.x + rect.width / 2;
+  const y = rect.y - 10;
+  popup.style.left = `${x}px`;
+  popup.style.top = `${y}px`;
+  popup.classList.toggle('show');
+}
+
+// Hide popup when clicked outside
+// document.addEventListener('click', function(e) {
+//   if (e.target !== popup && !popup.contains(e.target)) {
+//     popup.classList.toggle('show');
+//   }
+// });
+
+    </script>
+</body>
+</html>
