@@ -23,7 +23,7 @@
       font-family: "Open Sans", sans-serif;
       font-weight: 400;
       color: rgb(32, 32, 32);
-      background-color: rgb(236, 232, 228);
+      background-color: #EDE8E8  /* rgb(236, 232, 228); */
     }
 
     /* Define styles for the headings */
@@ -46,7 +46,10 @@
     h3 {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 10px;
+      width: 100%;
+      padding-bottom:10px;
+      border-bottom: #ccc 1px solid;
+      margin-bottom: 20px;
     }
 
     /* Define styles for the paragraph */
@@ -85,10 +88,10 @@
     }
 
     .caption {
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: 400;
       font-style: italic;
-      margin: 0;
+      margin: 5px 0 20px 0;
       padding: 0;
       color: rgb(100, 100, 100);
     }
@@ -108,6 +111,8 @@
     /* Define styles for the left column */
     .left-column {
       flex-basis: 40%;
+      /* background-color: rgba(255, 255, 255, 0.35); */
+      border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
     }
@@ -115,7 +120,7 @@
     /* Define styles for the right column */
     .right-column {
       flex-basis: 55%;
-      background-color: rgba(255, 255, 255, 0.35);
+      background-color: #EDE8E8;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
@@ -151,14 +156,72 @@
       src="https://ion.cesium.com/stories/viewer/?id=fdf1111f-a708-4e54-afba-f45239577fd8" frameborder="0"
       allow="fullscreen" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     <!-- 💡💡💡 Cesium map: paste embed code above -->
-    <p class="caption">Caption for Cesium slideshow</p>
+    <p class="caption">Explore the Cesium Ion slideshow via the above controls</p>
     <div class="title">
-      <h1>Brief, yet bold title for project</h1>
-      <h2>Subtitle with when and where</h2>
+      <h1>Visualizing point clouds and their derivatives</h1>
+      <h2>University of Kentucky's central campus</h2>
     </div>
     <div class="container">
       <div class="left-column">
-        <h3>Left Column - Description</h3>
+        <h3>Introduction & Methodology</h3>
+        <p>
+          Visualizing lidar point clouds typically involves colorizing a cloud with aerial imagery taken near the same time as the lidar scan. The Cesium Ion slideshow above shows a 2019 point cloud (using 2018 NAIP imagery) for UKy's central campus.  
+          </p>
+          <p>
+            However, campus also has a point cloud from 2010. Creating digital surface models (DSM) of these point clouds allows comparison in heights between the two years, e.g., changes in building and tree heights. To find the difference in height, the calculation subtracts the 2010 DSM from the 2019 DSM. The resulting raster layer is multiplied over a shaded relief base map from the 2019 DSM in Map figure 1. 
+        </p>
+
+        <p>
+          Lidar point clouds are valued for their high resolution and accuracy in capturing both ground and above-ground features. Aerial lidar scans often capture the sides of buildings that are not shown in aerial imagery. Patterson Office Tower (POT) is a good example of this. The 2019 point cloud shows the sides of POT – with enough detail that we can create an elevation profile and finally ask, "If we put the phrase 'Geography Y'all' in Geography department windows, who will see it?"
+        </p>
+
+        <p>
+          The below section explores this question. We have discovered that the 8th floor of POT (Geography's home) is close to 1,075 feet above sea level. Using a viewshed analysis with a DSM created from the 2019 point cloud, we can visualization where these windows are visible from neighboring locations on the ground.
+        </p>
+
+        
+        <p>
+          Visualizations created from lidar data provided by
+          <a href="https://kyfromabove.ky.gov/">KyFromAbove</a> in ArcGIS Pro and
+          Blender. Additional sources of information from
+          <a href="https://...">name of source</a>, April, 2023.
+        </p>
+
+        <p>
+          Page and visualizations created by B for GEO 409, Department of
+          Geography, University of Kentucky. Spring 2023.
+        </p>
+
+
+      </div>
+
+      <div class="right-column">
+        <h3>Visualizing change </h3>
+        <img src="https://live.staticflickr.com/65535/52843844210_c41bf2512e_h.jpg" alt="Campus change, 2010-2019" width="100%" />
+        <p class="caption">Map figure 1: Changes in campus surface heights.  <a href="https://www.flickr.com/photos/28640579@N02/52843844210/in/dateposted/" target="_blank">Enlarge</a></p>
+
+      </div>
+    </div>
+
+  </section>
+  <section>
+    <div class="title">
+      <!-- <h1></h1> -->
+      <h2>Visualizing Patterson Office Tower: It's Geography Y'all!</h2>
+    </div>
+    <iframe title="Spring 2023" width="100%" height="576"
+    src="profile/" frameborder="0"
+    allow="fullscreen" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <p class="caption">Zoom and pan to view individual offices</p>
+    
+    <div class="container">
+      <div class="left-column">
+        <h3>Location on campus</h3>
+        <img src="https://live.staticflickr.com/65535/52815473006_b2a459b89f_h.jpg" alt="Patterson Office Tower" width="100%" />
+        <p class="caption">Caption for map1  <a href="https://www.flickr.com/photos/28640579@N02/52815473006/in/dateposted/" target="_blank">Explore</a></p>
+
+        <img src="map2.jpg" alt="Something about this map" width="100%" />
+        <p class="caption">Caption for map2</p>
         <p>
           Two sentences about your area/theme of interest (e.g., when was it
           established, created, where is it, what is unique about, etc.)
@@ -195,17 +258,16 @@
       </div>
 
       <div class="right-column">
-        <h3>Right Column - Vizualization </h3>
-        <img src="https://live.staticflickr.com/65535/52815473006_192db743c1_k.jpg" alt="Something about this map" width="100%" />
-        <p class="caption">Caption for map1  <a href="https://live.staticflickr.com/65535/52815473006_b45479856f_o.jpg" target="_blank">Explore</a></p>
+        <h3>Who can see the 8th floor?</h3>
+
+        <img src="https://live.staticflickr.com/65535/52842170217_a5f6958c67_h.jpg" alt="Viewshed analysis of Patterson Office Tower" width="100%" />
+        <p class="caption">Caption for map1  <a href="https://www.flickr.com/photos/28640579@N02/52842170217/in/dateposted/" target="_blank">Explore</a></p>
 
         <img src="map2.jpg" alt="Something about this map" width="100%" />
         <p class="caption">Caption for map2</p>
       </div>
     </div>
-    <iframe title="Spring 2023" width="100%" height="576"
-    src="profile/" frameborder="0"
-    allow="fullscreen" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    
   </section>
   <footer>
     <hr />
