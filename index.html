@@ -147,6 +147,13 @@
         flex-basis: 100%;
       }
     }
+    hr {
+      border: 0;
+      height: 1px;
+      background: #333;
+      background-image: linear-gradient(to right, #ccc, #333, #ccc);
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 
@@ -157,7 +164,7 @@
       src="https://ion.cesium.com/stories/viewer/?id=fdf1111f-a708-4e54-afba-f45239577fd8" frameborder="0"
       allow="fullscreen" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     <!-- 💡💡💡 Cesium map: paste embed code above -->
-    <p class="caption">Map figure 1: Explore the Cesium Ion slideshow via the above controls (CTRL or ⌘ + click to rotate)</p>
+    <p class="caption">Map figure 1: Explore the Cesium Ion slideshow via the above controls (CTRL or ⌘ + click to rotate).</p>
     <div class="title">
       <h1>Visualizing point clouds and their derivatives</h1>
       <h2>University of Kentucky's central campus</h2>
@@ -203,43 +210,61 @@
     <iframe title="Spring 2023" width="100%" height="576"
     src="profile/" frameborder="0"
     allow="fullscreen" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    <p class="caption">Figure 3: Zoom and pan to view individual offices</p>
+    <p class="caption">Figure 3: POT elevation profile, all aspects. Zoom and pan to view individual offices.</p>
     
     <div class="container">
       <div class="left-column">
         <h3>Location on campus</h3>
         <img src="https://live.staticflickr.com/65535/52815473006_b2a459b89f_h.jpg" alt="Patterson Office Tower" width="100%" />
         <p class="caption">Map figure 4: Location of Patterson Office Tower (POT)  <a href="https://www.flickr.com/photos/28640579@N02/52815473006/in/dateposted/" target="_blank">Enlarge</a></p>
-
-       X
+        <img src="https://ionajo.github.io/uky-esports-location/pot.jpg" alt="POT elevation profile SE aspect" width="40%" style="float:left;margin: 0 20px 20px 0;"> 
+        <p>The <a href="https://efacts.uky.edu/Details?id=patterson_tower">Patterson Office Tower</a> is the second tallest building on campus after the Albert B. Chandler Hospital. It stands approximately 240 feet with a base of 140 by 100 feet. Most of the Department of Geography's offices are on the 8th floor with a few teaching assistant offices located on the 14th floor. The elevators have a twitter handle: <a href="https://twitter.com/PotElevators">@PotElevators</a>.</p>
+        <p class="caption">Map figure 5: POT SW aspect elevation profile.  <a href="https://ionajo.github.io/uky-esports-location/pot.jpg" target="_blank">Enlarge</a></p>
       </div>
 
       <div class="right-column">
         <h3>Who can see the 8th floor?</h3>
 
         <img src="https://live.staticflickr.com/65535/52842170217_a5f6958c67_h.jpg" alt="Viewshed analysis of Patterson Office Tower" width="100%" />
-        <p class="caption">Caption for map1  <a href="https://www.flickr.com/photos/28640579@N02/52842170217/in/dateposted/" target="_blank">Explore</a></p>
+        <p class="caption">Map figure 6: Viewshed analysis using DSM to locate where ground observers can see the 8th floor NW and SE aspects. <a href="https://www.flickr.com/photos/28640579@N02/52842170217/in/dateposted/" target="_blank">Enlarge</a></p>
 
-        <img src="map2.jpg" alt="Something about this map" width="100%" />
-        <p class="caption">Caption for map2</p>
+      </div>
+    </div>
+    
+  </section>
+  <section>
+    <div class="title">
+      <!-- <h1></h1> -->
+      <h2>Sources & Methodology</h2>
+    </div>
+    
+    <div class="container">
+      <div class="left-column">
+        <p>
+          Two data sources were used in the production of these visualizations: <br>
+          1. <a href="https://kyfromabove.ky.gov/">KyFromAbove</a> Phase 1 and 2 lidar point clouds<br>
+          2. 2018 NAIP imagery acquired from <a href="https://kyraster.ky.gov/arcgis/services/">kyraster.ky.gov</a>
+          </p>
+         
+        <p>
+          Page and visualizations created by <a href="https://geography.as.uky.edu/users/blshea1">Boyd Shearer</a>, April, 2023. for GEO 409, Department of
+          Geography, University of Kentucky. Spring 2023.
+        </p>
+
+      </div>
+
+      <div class="right-column">
+        <p>
+          The point clouds were extracted with LASTools and assembled and colorized in ArcGIS Pro. Digital surface models were created in ArcGIS Pro for the 2010 and 2019 point clouds. The height change model was created by subtracting the 2010 DSM from the 2019 DSM using Map Algebra. The shaded relief base map was created in Blender from the 2019 DSM. The elevation profiles were created QGIS and exported to Adobe Illustrator. The viewshed analysis was created in ArcGIS Pro and exported as a GeoTIFF.
+        </p>
+
       </div>
     </div>
     
   </section>
   <footer>
     <hr />
-    <p>
-      Visualizations created from lidar data provided by
-      <a href="https://kyfromabove.ky.gov/">KyFromAbove</a> in ArcGIS Pro and
-      Blender. Additional sources of information from
-      <a href="https://...">name of source</a>, April, 2023.
-    </p>
 
-    <p>
-      Page and visualizations created by B for GEO 409, Department of
-      Geography, University of Kentucky. Spring 2023.
-    </p>
-    
     <img src="img/logo-color-400px.png" alt="UKy Arts and Sciences  " width="300px">
 
   </footer>
