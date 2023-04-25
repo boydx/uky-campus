@@ -133,7 +133,8 @@
 
     /* Media query for small screens */
     /* For screens up to 768px, apply these rules. */
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) { */
+      @media (max-width: 1400px) {
 
       /* Change to a single column layout */
       .container {
@@ -156,7 +157,7 @@
       src="https://ion.cesium.com/stories/viewer/?id=fdf1111f-a708-4e54-afba-f45239577fd8" frameborder="0"
       allow="fullscreen" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     <!-- 💡💡💡 Cesium map: paste embed code above -->
-    <p class="caption">Explore the Cesium Ion slideshow via the above controls</p>
+    <p class="caption">Map figure 1: Explore the Cesium Ion slideshow via the above controls (CTRL or ⌘ + click to rotate)</p>
     <div class="title">
       <h1>Visualizing point clouds and their derivatives</h1>
       <h2>University of Kentucky's central campus</h2>
@@ -168,7 +169,7 @@
           Visualizing lidar point clouds typically involves colorizing a cloud with aerial imagery taken near the same time as the lidar scan. The Cesium Ion slideshow above shows a 2019 point cloud (using 2018 NAIP imagery) for UKy's central campus.  
           </p>
           <p>
-            However, campus also has a point cloud from 2010. Creating digital surface models (DSM) of these point clouds allows comparison in heights between the two years, e.g., changes in building and tree heights. To find the difference in height, the calculation subtracts the 2010 DSM from the 2019 DSM. The resulting raster layer is multiplied over a shaded relief base map from the 2019 DSM in Map figure 1. 
+            However, campus also has a point cloud from 2010. Creating digital surface models (DSM) of these point clouds allows comparison in heights between the two years, e.g., changes in building and tree heights. To find the difference in height, the calculation subtracts the 2010 DSM from the 2019 DSM. The resulting raster layer is multiplied over a shaded relief base map from the 2019 DSM in Map figure 2. 
         </p>
 
         <p>
@@ -180,17 +181,7 @@
         </p>
 
         
-        <p>
-          Visualizations created from lidar data provided by
-          <a href="https://kyfromabove.ky.gov/">KyFromAbove</a> in ArcGIS Pro and
-          Blender. Additional sources of information from
-          <a href="https://...">name of source</a>, April, 2023.
-        </p>
 
-        <p>
-          Page and visualizations created by B for GEO 409, Department of
-          Geography, University of Kentucky. Spring 2023.
-        </p>
 
 
       </div>
@@ -198,7 +189,7 @@
       <div class="right-column">
         <h3>Visualizing change </h3>
         <img src="https://live.staticflickr.com/65535/52843844210_c41bf2512e_h.jpg" alt="Campus change, 2010-2019" width="100%" />
-        <p class="caption">Map figure 1: Changes in campus surface heights.  <a href="https://www.flickr.com/photos/28640579@N02/52843844210/in/dateposted/" target="_blank">Enlarge</a></p>
+        <p class="caption">Map figure 2: Changes in campus surface heights.  <a href="https://www.flickr.com/photos/28640579@N02/52843844210/in/dateposted/" target="_blank">Enlarge</a></p>
 
       </div>
     </div>
@@ -212,49 +203,15 @@
     <iframe title="Spring 2023" width="100%" height="576"
     src="profile/" frameborder="0"
     allow="fullscreen" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    <p class="caption">Zoom and pan to view individual offices</p>
+    <p class="caption">Figure 3: Zoom and pan to view individual offices</p>
     
     <div class="container">
       <div class="left-column">
         <h3>Location on campus</h3>
         <img src="https://live.staticflickr.com/65535/52815473006_b2a459b89f_h.jpg" alt="Patterson Office Tower" width="100%" />
-        <p class="caption">Caption for map1  <a href="https://www.flickr.com/photos/28640579@N02/52815473006/in/dateposted/" target="_blank">Explore</a></p>
+        <p class="caption">Map figure 4: Location of Patterson Office Tower (POT)  <a href="https://www.flickr.com/photos/28640579@N02/52815473006/in/dateposted/" target="_blank">Enlarge</a></p>
 
-        <img src="map2.jpg" alt="Something about this map" width="100%" />
-        <p class="caption">Caption for map2</p>
-        <p>
-          Two sentences about your area/theme of interest (e.g., when was it
-          established, created, where is it, what is unique about, etc.)
-        </p>
-
-        <p>
-          Two sentences about the goals of the project (e.g., The goal of this
-          project is to measure and visualize the historic entrance to Mammoth
-          Cave).
-        </p>
-
-        
-          <img src="img/pot-1973.jpg" alt="Patterson Office tower in 1973" width="100%" />
-          <p class="caption">POT in 1973. <a href="img/pot-1973.jpg" target="_blank">Explore</a></p>
-        
-          <p>
-            Historic images from the <a href="https://exploreuk.uky.edu/catalog/?q=Patterson+Office+Tower&f%5Bformat%5D%5B%5D=images&per_page=20">UKy
-              Libraries Special Collections</a>.
-          </p>
-
-        <p>
-          Visualizations created from lidar data provided by
-          <a href="https://kyfromabove.ky.gov/">KyFromAbove</a> in ArcGIS Pro and
-          Blender. Additional sources of information from
-          <a href="https://...">name of source</a>, April, 2023.
-        </p>
-
-        <p>
-          Page and visualizations created by B for GEO 409, Department of
-          Geography, University of Kentucky. Spring 2023.
-        </p>
-
-
+       X
       </div>
 
       <div class="right-column">
@@ -271,6 +228,18 @@
   </section>
   <footer>
     <hr />
+    <p>
+      Visualizations created from lidar data provided by
+      <a href="https://kyfromabove.ky.gov/">KyFromAbove</a> in ArcGIS Pro and
+      Blender. Additional sources of information from
+      <a href="https://...">name of source</a>, April, 2023.
+    </p>
+
+    <p>
+      Page and visualizations created by B for GEO 409, Department of
+      Geography, University of Kentucky. Spring 2023.
+    </p>
+    
     <img src="img/logo-color-400px.png" alt="UKy Arts and Sciences  " width="300px">
 
   </footer>
